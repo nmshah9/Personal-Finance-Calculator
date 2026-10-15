@@ -15,6 +15,15 @@ from demo_queries import REQUIRED_QUERIES
 from finance_tools import (ALL_TOOLS, calculate_emi, calculate_required_sip,
                            calculate_sip_future_value, format_inr, plan_budget, safe_calculate)
 
+# ============================================================
+# LOAD BANNER
+# ============================================================
+from PIL import Image
+banner = Image.open("banner.png")
+st.image(banner, use_column_width=True)
+
+# ================================================================
+
 st.set_page_config(page_title="Personal Finance AI Agent", page_icon="💰", layout="wide")
 
 MODE_CALC = "🧮 Calculators"
@@ -239,3 +248,18 @@ if mode == MODE_CALC:
     render_calculators()
 else:
     render_chat()
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.markdown("---")
+
+st.markdown("""
+<div style='text-align: center;'>
+
+### 🧮 Personal-Finance-Calculator-using-Agentic AI ###
+
+Built with ❤️ using Streamlit | Developed by nmshah9
+
+</div>
+""", unsafe_allow_html=True)
